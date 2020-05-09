@@ -1,0 +1,78 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <!-- <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}">{{site.title}}</a> -->
+      <a class="navbar-item" href="{{siteRootPath}}/index.html"><img src="{{uiRootPath}}/img/nun_logo.png">&nbsp;{{site.title}}</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <!-- comment out default nav bar items we don't want
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+      -->
+<!-- now define my custom options -->
+        <a class="navbar-item" href="{{siteRootPath}}/index.html">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Subject Matter</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="{{siteRootPath}}/jamstack/latest/index.html">JAMstack</a>
+            <a class="navbar-item" href="{{siteRootPath}}/permaculture/latest/index.html">Permaculture</a>
+            <a class="navbar-item" href="{{siteRootPath}}/writing/latest/index.html">Writing</a>
+            <a class="navbar-item" href="{{siteRootPath}}/cooking/latest/index.html">Cooking</a>
+            <a class="navbar-item" href="{{siteRootPath}}/survival-list/latest/index.html">The Survival List</a>
+            <a class="navbar-item" href="{{siteRootPath}}/junk-drawer/latest/index.html">Junk Drawer</a>
+          </div>
+        </div>
+        
+      <!-- comment out the download button
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div> -->
+
+        <!-- Add pagination buttons to the header -->
+        <div class="navbar-item">
+          {{#if page.parent}}
+          <span class="control"><a class="button is-primary" href="{{{siteRootPath}}}{{{page.parent.url}}}">Parent</a></span>&nbsp;&nbsp;
+          {{/if}}
+          {{#if page.previous}}
+          <span class="control"><a class="button is-primary" href="{{{siteRootPath}}}{{{page.previous.url}}}">Prev</a></span>&nbsp;&nbsp;
+          {{/if}}
+          {{#if page.next}}
+          <span class="control"><a class="button is-primary" href="{{{siteRootPath}}}{{{page.next.url}}}">Next</a></span>
+          {{/if}}
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</header>

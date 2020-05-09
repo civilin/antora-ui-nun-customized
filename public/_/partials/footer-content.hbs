@@ -1,0 +1,51 @@
+<footer class="footer">
+<!-- <p style="text-align: center;">Welcome to {{site.title}}</p> -->
+<p style="text-align: center;">
+  <a href="#">Top</a>&nbsp;&nbsp;
+  {{#if page.parent}}
+  <a href="{{{siteRootPath}}}{{{page.parent.url}}}">Parent</a>&nbsp;&nbsp;
+  {{/if}}
+  {{#if page.previous}}
+  <a href="{{{siteRootPath}}}{{{page.previous.url}}}">Prev</a>&nbsp;&nbsp;
+  {{/if}}
+  {{#if page.next}}
+  <a href="{{{siteRootPath}}}{{{page.next.url}}}">Next</a>
+  {{/if}}
+</p>
+<!--
+<p style="text-align: center;"><b>About</b>: {{site.url}}{{page.url}}</p>
+<p><b>Site</b>: {{site.title}}<br>
+<b>Component Name: {{page.component.name}}<br>
+<b>Module</b>: {{page.module}}<br>
+<b>Component</b>: {{page.component.title}}<br>
+<b>Page Title</b>: {{page.title}}<br>
+<b>Component Version</b>: {{page.version}}</p>
+<hr>
+-->
+<!-- see also https://docs.antora.org/antora/2.3/page/intrinsic-attributes/#site-and-configuration-attributes -->
+<style>
+  table, th, td {
+  padding: 10px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  }
+</style>
+<!-- <p style="text-align: center;"><b>About</b>: {{site.url}}{{page.url}}</p> -->
+<!-- <p style="text-align: center;"><b>About</b>: {{page.url}}</p> -->
+<table style="width:100%">
+  <tr>
+    <th>Page Title</th>
+    <th>File Name</th>
+    <th>Component</th>
+    <th>Module</th>
+    <th>Version</th>
+  </tr>
+  <tr>
+    <td>{{page.title}}</td>
+    <td>{{page.url}}</td>
+    <td>{{page.component.title}}</td>
+    <td>{{page.module}}</td>
+    <td>{{page.version}}</td>
+  </tr>
+</table>
+</footer>
